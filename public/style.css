@@ -1,3 +1,7 @@
+/* HOLA SOY LA BRANCH FLEXIBOX */
+
+
+h1 {text-align: center;}
 * {
   padding: 0;
   margin: 0;
@@ -34,7 +38,7 @@ nav {
   margin-top:0.3em;
   margin-left: 0.5em;
   letter-spacing: 0.2em;
-  font-size: 2.3em;
+  font-size: 2.3rem;
 }
 .subtitulo{  
     margin-left: 0.7em;
