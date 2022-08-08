@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fronteras Arte Ciencia y Tecnologia</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+  </head >
   <body>
     <header>
-      <div class="titulo-subtitulo">
-        <h1 class="titulo">FRONTERAS</h1>
-        <h2 class="subtitulo">arte ciencia y tecnologia</h2>
+      <div class="encabezado">
+        <div>
+          <h1 class="titulo">FRONTERAS</h1>
+          <h2 class="subtitulo">arte ciencia y tecnologia</h2>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#contacto" data-ancla="contacto">Home</a></li>
+            <li><a href="#nosotros" data-ancla="nosotros">Mapa</a></li>
+            <li>
+              <a href="#servicios" data-ancla="servicios">About</a>
+            </li>
+            <li><a href="#pantalla3" data-ancla="pantalla3">Contacto</a></li>
+            
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><a href="">Obras</a></li>
-          <li><a href="">Bibliografia</a></li>
-          <li><a href="">Contacto</a></li>
-          <li><a href="">About</a></li>
-        </ul>
-      </nav>
     </header>
-    <section class="pantalla-splash">
+    <section class="pantalla-splash" id="contacto">
       <iframe
         class="atomo-simulacion"
         src="http://www.falstad.com/qmatom/qmatom.html?vc=0&n=3&l=3&m=0&sl=0&sc=false&cub=false&en=true&lc=false&rc=false&pcc=true&axc=true&compc=false&asc=true&anc=true&sp=72&sam=64&rx=-173&ry=4&rz=31&br=0.0011383191748522185&zm=0.277"
@@ -32,7 +38,7 @@
       ></iframe>
     </section>
 
-    <section class="pantalla-miro">
+    <section class="pantalla-miro" id="nosotros">
       <iframe
         class="miro"
         src="https://miro.com/app/live-embed/uXjVO-DY3LQ=/?moveToViewport=-11037,-4963,33375,15044&embedId=252417390036&embedAutoplay=true"
@@ -41,14 +47,58 @@
         allowfullscreen
       ></iframe>
     </section>
-    <section>
-     
-    </section>
-    <section class="pantalla-2">
 
+    <section class="pantalla-2" id="servicios">
+      <p class="texto-lorem">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quos illum
+        harum adipisci quas praesentium dolor, sit aperiam suscipit doloremque
+        repudiandae dignissimos. Placeat et molestiae tenetur nobis accusamus
+        assumenda <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quos illum
+        harum adipisci quas praesentium dolor, sit aperiam suscipit doloremque
+        repudiandae dignissimos. Placeat et molestiae tenetur nobis accusamus
+        assumenda <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quos illum
+        harum adipisci quas praesentium dolor, sit aperiam suscipit doloremque
+        repudiandae dignissimos. Placeat et molestiae tenetur nobis accusamus
+        assumenda <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quos illum
+        harum adipisci quas praesentium dolor, sit aperiam suscipit doloremque
+        repudiandae dignissimos. Placeat et molestiae tenetur nobis accusamus
+        assumenda <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quos illum
+        harum adipisci quas praesentium dolor, sit aperiam suscipit doloremque
+        repudiandae dignissimos. Placeat et molestiae tenetur nobis accusamus
+        assumenda <br>
+      </p>
+    </section>
+    <section id="pantalla3" class="pantalla3">
+<p>LOREM</p>
     </section>
     <footer>
       <p>Grupo de investigacion UNTREF: Relatos contraehegemonicos</p>
     </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+      integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // A $( document ).ready() block.
+      $(document).ready(function () {
+        $(".top a").click(function (e) {
+          e.preventDefault();
+          var offset = $($(this).attr("href")).offset().top;
+          $("html, body").animate({ scrollTop: offset }, 600);
+          return false;
+        });
+      });
+    </script>
   </body>
 </html>
