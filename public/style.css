@@ -5,13 +5,28 @@
   margin: 0;
 }
 
+
 header {
-  padding-bottom: 10px;
+  *padding-bottom: 10px;
   min-width: 100%;
   position: fixed;
   z-index: 5;
 }
-.encabezado {
+
+.encabezadoAbout {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0px 7px 10px -4px rgba(255, 255, 255, 0.6);
+  width: 100%;
+  opacity: 90%;
+  min-height: 90px;
+  transition: background-color 0.2s ease-in-out 0.02s;
+}
+
+.encabezadoHome {
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
@@ -19,9 +34,23 @@ header {
   background-color: white;
   box-shadow: 0px 7px 10px -4px rgba(0, 0, 0, 0.6);
   width: 100%;
-  opacity:90%;
-  *height: 10px;
+  opacity: 90%;
+  min-height: 90px;
+  transition: background-color 0.2s ease-in-out 0.02s;
 }
+
+/* .encabezado {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 7px 10px -4px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  opacity: 90%;
+  *height: 10px;
+  
+} */
 
 nav {
   width: 400px;
@@ -35,21 +64,43 @@ ul {
   max-width: 100%;
 }
 
-nav ul a {
+.boton-nav_about {
   text-decoration: none;
   font-size: 40px;
-  font-weight:bolder;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+  font-family: arial;
+  transition: all 0.2s ease-in-out 0.02s;
+}
+.boton-nav_home {
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bolder;
   color: rgb(0, 0, 0);
   margin: 0px;
   font-family: arial;
- 
+  transition: all 0.2s ease-in-out 0.02s;
 }
 
-nav ul a:hover {
+.boton-nav_about:hover {
+  color: rgb(199, 169, 114);
+}
+.boton-nav_home:hover {
   color: rgb(199, 169, 114);
 }
 
-.titulo {
+.tituloAbout {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  letter-spacing: 1rem;
+  font-size: 5vh;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
+  transition: all 0.2s ease-in-out 0.02s;
+}
+
+.tituloHome {
   margin-top: 0.5rem;
   margin-left: 1rem;
   letter-spacing: 1rem;
@@ -57,22 +108,62 @@ nav ul a:hover {
   font-family: "Courier New", Courier, monospace;
 
   color: #ffffff;
-  
-  text-shadow: 0 -1px 4px rgb(54, 54, 54), 0 -2px 10px rgb(156, 69, 69), 0 -10px 20px #ff8000,
-    0 -18px 40px rgba(100, 34, 34, 0.651);
+
+  text-shadow: 0 -1px 4px rgb(54, 54, 54), 0 -2px 10px rgb(156, 69, 69),
+    0 -10px 20px #ff8000, 0 -18px 40px rgba(100, 34, 34, 0.651);
   color: #ffffff;
 
+  transition: all 0.2s ease-in-out 0.02s;
 }
-.titulo:hover{
-color:red;
+
+/* .titulo {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  letter-spacing: 1rem;
+  font-size: 5vh;
+  font-family: "Courier New", Courier, monospace;
+
+  color: #ffffff;
+
+  text-shadow: 0 -1px 4px rgb(54, 54, 54), 0 -2px 10px rgb(156, 69, 69),
+    0 -10px 20px #ff8000, 0 -18px 40px rgba(100, 34, 34, 0.651);
+  color: #ffffff;
+  
+} */
+.tituloAbout:hover {
+  *color: rgb(0, 0, 0);
 }
-.subtitulo {
+.tituloHome:hover {
+  *color: rgb(0, 0, 0);
+}
+
+.subtituloAbout {
   opacity: 100%;
   margin-left: 0.7em;
   letter-spacing: 0.2em;
   font-family: arial;
-  font-size:23px;
+  font-size: 23px;
+  color: white;
+  transition: all 0.2s ease-in-out 0.02s;
 }
+
+.subtituloHome {
+  opacity: 100%;
+  margin-left: 0.7em;
+  letter-spacing: 0.2em;
+  font-family: arial;
+  font-size: 23px;
+  color: black;
+  transition: all 0.2s ease-in-out 0.02s;
+}
+
+/* .subtitulo {
+  opacity: 100%;
+  margin-left: 0.7em;
+  letter-spacing: 0.2em;
+  font-family: arial;
+  font-size: 23px;
+} */
 
 .pantalla-splash {
   min-height: 100vh;
@@ -117,8 +208,7 @@ color:red;
   border-radius: 30px;
   box-shadow: -8px 3px 15px 2px rgba(0, 0, 0, 0.8);
   text-align: center;
-  
-
+  transition: box-shadow 0.2s ease-in-out 0.02s;
 }
 .flex-items_splash:hover {
   *opacity: 90%;
@@ -151,11 +241,16 @@ color:red;
   margin-top: 80px;
 }
 
+.relleno {
+  height: 90px;
+  width: 100%;
+}
 .pantalla-about {
   background-color: rgb(0, 0, 0);
   min-width: 100%;
   min-height: 100vh;
   text-align: center;
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,17 +313,20 @@ footer p {
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-seriff;
-  font-size: 20px;
+  font-size: 13px;
 }
 
 footer div {
   width: 50%;
 }
 
-/* , (orientation: landscape) */
-@media only screen and (max-device-width: 600px) {
+
+@media only screen and (max-device-width: 700px) {
   ul {
-    width: 90%;
+    width: 100%;
+    margin: 0px;
+    justify-content: space-around;
+    margin-top:10px;
   }
   .contenedor-splash {
     width: 90%;
@@ -239,23 +337,39 @@ footer div {
     height: 120px;
     margin: 5px;
   }
-  .titulo {
-    margin-left: 17px;
-  }
+  .tituloAbout, .tituloHome {
+  font-size: 35px;
+  margin:0px;  
+}
 
-  .subtitulo {
-    display: none;
-  }
+  .subtituloAbout, .subtituloHome {
+    font-size: 15px;
 
+  margin:0px;
+  }
+  .encabezadoAbout, .encabezadoHome {
+    width: 100%;
+    justify-content: center;
+    min-height: 80px;
+  }
   .encabezado_tit_subtit {
     text-align: center;
   }
+
+  .boton-nav_about, .boton-nav_home{
+   
+    font-size:30px;
+  }
+
+
+
+
   .contenedor_texto-about {
     width: 90%;
   }
   .titulo-about {
     font-size: 30px;
-    margin-top: 90px;
+    margin-top: 70px;
   }
 
   .subtitulo-about {
@@ -267,5 +381,9 @@ footer div {
   }
   footer p {
     font-size: 10px;
+  }
+  nav ul a {
+    margin: 0px;
+    font-size: 30px;
   }
 }

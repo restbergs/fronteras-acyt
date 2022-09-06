@@ -33,67 +33,52 @@
     />
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="theme-color" content="#ffffff" />
-
+    <!-- TITILE -->
     <title>Fronteras Arte Ciencia y Tecnologia</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
+  <!-- >----------------BODY--------------->
   <body>
     <header>
-      <div class="encabezado">
+      <div class="encabezadoAbout" id="encabezado">
         <div class="encabezado_tit_subtit">
-          <h1 class="titulo">FRONTERAS</h1>
-          <h2 class="subtitulo">arte ciencia y tecnologia</h2>
+          <h1 class="tituloAbout" id="titulo">FRONTERAS</h1>
+          <h2 class="subtituloAbout" id="subtitulo">
+            arte ciencia y tecnologia
+          </h2>
         </div>
-        <nav>
+        <nav class="botones-navegacion">
           <ul>
-            <li><a href="#home" data-ancla="home">A</a></li>
-            <li><a href="#mapa" data-ancla="mapa">C</a></li>
-            <li><a href="#about" data-ancla="about">Y</a></li>
-            <li><a href="#contacto" data-ancla="contacto">T</a></li>
+            <li>
+              <a class="boton-nav_about" id="A" href="#about" data-ancla="about"
+                >A</a
+              >
+            </li>
+            <li>
+              <a class="boton-nav_about" id="C" href="#home" data-ancla="home"
+                >C</a
+              >
+            </li>
+            <li>
+              <a class="boton-nav_about" id="Y" href="#mapa" data-ancla="mapa"
+                >Y</a
+              >
+            </li>
+            <li>
+              <a
+                class="boton-nav_about"
+                id="T"
+                href="#contacto"
+                data-ancla="contacto"
+                >T</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
-    <section class="pantalla-splash" id="home">
-      <div class="contenedor-splash">
-        <div class="flex-items_splash caja-1_splash">
-          <h2 class="titulo_items-splash">
-            <a href=""> Territorio, mapas y cartografías</a>
-          </h2>
-          
-        </div>
-
-        <div class="flex-items_splash caja-2_splash">
-          <h2 class="titulo_items-splash">
-            <a href=""> Cuerpo e imaginarios posthumanos</a>
-          </h2>
-          
-        </div>
-
-        <div class="flex-items_splash caja-3_splash">
-          <h2 class="titulo_items-splash">
-            <a href="">
-              Materialidades, inmaterialidad  y <br> desmaterializaciones</a
-            >
-          </h2>
-          
-        </div>
-      </div>
-    </section>
-
-    <section class="pantalla-miro" id="mapa">
-      <iframe
-        class="miro"
-        src="https://miro.com/app/live-embed/uXjVO-DY3LQ=/?moveToViewport=-11037,-4963,33375,15044&embedId=252417390036&embedAutoplay=true"
-        frameborder="1"
-        scrolling="no"
-        allowfullscreen
-      ></iframe>
-    </section>
-
     <section class="pantalla-about" id="about">
+      <div class="relleno"></div>
       <div class="contenedor_texto-about">
         <h2 class="titulo-about">
           Relatos contrahegemónicos en el arte contemporáneo:
@@ -124,8 +109,41 @@
         </p>
       </div>
     </section>
+    <section class="pantalla-splash" id="home">
+      <div class="contenedor-splash">
+        <div class="flex-items_splash caja-1_splash">
+          <h2 class="titulo_items-splash">
+            <a href=""> Territorio, mapas y cartografías</a>
+          </h2>
+        </div>
+        <div class="flex-items_splash caja-2_splash">
+          <h2 class="titulo_items-splash">
+            <a href=""> Cuerpo e imaginarios posthumanos</a>
+          </h2>
+        </div>
+        <div class="flex-items_splash caja-3_splash">
+          <h2 class="titulo_items-splash">
+            <a href="">
+              Materialidades, inmaterialidad y <br />
+              desmaterializaciones</a
+            >
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="pantalla-miro" id="mapa">
+      <iframe
+        class="miro"
+        src="https://miro.com/app/live-embed/uXjVO-DY3LQ=/?moveToViewport=-11037,-4963,33375,15044&embedId=252417390036&embedAutoplay=true"
+        frameborder="1"
+        scrolling="no"
+        allowfullscreen
+      ></iframe>
+    </section>
+
     <section id="contacto" class="pantalla-contacto">
-      <!-- <div class="etiqueta-contacto">
+      <!-- <div class="etiqueta-contacto">       
       <p>LOREM</p>
     </div> -->
     </section>
@@ -153,13 +171,37 @@
     <script>
       // A $( document ).ready() block.
       $(document).ready(function () {
-        $(".encabezado a").click(function (e) {
+        $(".botones-navegacion a").click(function (e) {
           e.preventDefault();
           var offset = $($(this).attr("href")).offset().top;
           $("html, body").animate({ scrollTop: offset }, 600);
           return false;
         });
       });
+
+      $(function () {
+        var encabezado= $(".encabezadoAbout");
+        var titulo= $(".tituloAbout");
+        var subtitulo= $(".subtituloAbout");
+        var botones= $(".boton-nav_about");
+        
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+
+          if (scroll >= 600) {
+            encabezado.removeClass("encabezadoAbout").addClass("encabezadoHome");
+            titulo.removeClass("tituloAbout").addClass("tituloHome");
+            subtitulo.removeClass("subtituloAbout").addClass("subtituloHome");
+            botones.removeClass("boton-nav_about").addClass("boton-nav_home");
+          } else {
+            encabezado.removeClass("encabezadoHome").addClass("encabezadoAbout");
+            titulo.removeClass("tituloHome").addClass("tituloAbout");
+            subtitulo.removeClass("subtituloHome").addClass("subtituloAbout");
+            botones.removeClass("boton-nav_home").addClass("boton-nav_about") 
+          }
+        });
+      });
     </script>
+    <script src="main.js"></script>
   </body>
 </html>
